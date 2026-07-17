@@ -5,7 +5,6 @@
 
 // ─── DOM Elements ────────────────────────────
 const cursorDot = document.getElementById('cursorDot');
-const cursorOutline = document.getElementById('cursorOutline');
 const particleCanvas = document.getElementById('particleCanvas');
 const navbar = document.getElementById('navbar');
 const themeToggle = document.getElementById('themeToggle');
@@ -32,59 +31,58 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 // ═══════════════════════════════════════════
-// 🎯 Custom Cursor
+// 🎯 Custom Cursor Dot (smooth delayed trail)
 // ═══════════════════════════════════════════
 function setupCustomCursor() {
-    // Don't show custom cursor on mobile
-    if (window.innerWidth <= 768) return;
+    if (window.innerWidth <= 768) {
+        if (cursorDot) cursorDot.style.display = 'none';
+        return;
+    }
 
     let mouseX = 0, mouseY = 0;
-    let outlineX = 0, outlineY = 0;
+    let dotX = 0, dotY = 0;
 
     document.addEventListener('mousemove', (e) => {
         mouseX = e.clientX;
         mouseY = e.clientY;
-
-        // Dot follows instantly
-        cursorDot.style.left = mouseX + 'px';
-        cursorDot.style.top = mouseY + 'px';
     });
 
-    // Smooth outline following
-    function animateOutline() {
-        outlineX += (mouseX - outlineX) * 0.15;
-        outlineY += (mouseY - outlineY) * 0.15;
-        cursorOutline.style.left = outlineX + 'px';
-        cursorOutline.style.top = outlineY + 'px';
-        requestAnimationFrame(animateOutline);
-    }
-    animateOutline();
+    // Smooth lerp animation — the dot trails behind with a delay
+    function animateDot() {
+        // Lerp factor: lower = more delay/smoother trailing
+        const ease = 0.08;
+        dotX += (mouseX - dotX) * ease;
+        dotY += (mouseY - dotY) * ease;
 
-    // Hover effects on interactive elements
+        cursorDot.style.left = dotX + 'px';
+        cursorDot.style.top = dotY + 'px';
+        requestAnimationFrame(animateDot);
+    }
+    animateDot();
+
+    // Grow dot slightly on interactive elements
     const hoverTargets = document.querySelectorAll('a, button, input, textarea, .project-card, .glass-card');
     hoverTargets.forEach(el => {
         el.addEventListener('mouseenter', () => {
-            cursorOutline.classList.add('hover');
-            cursorDot.style.width = '12px';
-            cursorDot.style.height = '12px';
+            cursorDot.style.width = '22px';
+            cursorDot.style.height = '22px';
             cursorDot.style.background = '#c084fc';
+            cursorDot.style.boxShadow = '0 0 25px rgba(192, 132, 252, 0.7), 0 0 8px rgba(192, 132, 252, 0.9)';
         });
         el.addEventListener('mouseleave', () => {
-            cursorOutline.classList.remove('hover');
-            cursorDot.style.width = '8px';
-            cursorDot.style.height = '8px';
+            cursorDot.style.width = '14px';
+            cursorDot.style.height = '14px';
             cursorDot.style.background = '';
+            cursorDot.style.boxShadow = '';
         });
     });
 
-    // Hide cursor when leaving window
+    // Hide dot when leaving window
     document.addEventListener('mouseleave', () => {
         cursorDot.style.opacity = '0';
-        cursorOutline.style.opacity = '0';
     });
     document.addEventListener('mouseenter', () => {
         cursorDot.style.opacity = '1';
-        cursorOutline.style.opacity = '1';
     });
 }
 

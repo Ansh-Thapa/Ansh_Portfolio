@@ -68,47 +68,23 @@ body {
     line-height: 1.6;
     overflow-x: hidden;
     -webkit-font-smoothing: antialiased;
-    cursor: none;
     transition: background 0.4s, color 0.4s;
 }
 
-a, button, input, textarea {
-    cursor: none;
-}
-
 /* ============================================
-   Custom Cursor
+   Custom Cursor Dot (trails behind pointer)
    ============================================ */
 .cursor-dot {
     position: fixed;
-    width: 8px;
-    height: 8px;
+    width: 14px;
+    height: 14px;
     background: var(--accent-2);
     border-radius: 50%;
     pointer-events: none;
     z-index: 99999;
     transform: translate(-50%, -50%);
-    transition: width 0.2s, height 0.2s, background 0.2s;
-    mix-blend-mode: difference;
-}
-
-.cursor-outline {
-    position: fixed;
-    width: 36px;
-    height: 36px;
-    border: 2px solid var(--accent-3);
-    border-radius: 50%;
-    pointer-events: none;
-    z-index: 99998;
-    transform: translate(-50%, -50%);
-    transition: width 0.3s, height 0.3s, border-color 0.3s;
-    mix-blend-mode: difference;
-}
-
-.cursor-outline.hover {
-    width: 56px;
-    height: 56px;
-    border-color: var(--accent-2);
+    box-shadow: 0 0 15px rgba(108, 92, 231, 0.6), 0 0 5px rgba(108, 92, 231, 0.8);
+    will-change: left, top;
 }
 
 /* ============================================
@@ -1457,13 +1433,8 @@ a, button, input, textarea {
         gap: 1rem;
     }
 
-    .cursor-dot,
-    .cursor-outline {
+    .cursor-dot {
         display: none;
-    }
-
-    body, a, button, input, textarea {
-        cursor: auto;
     }
 }
 
