@@ -1,0 +1,648 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Ansh Thapa — Computer Science with AI Student | Full-Stack Developer | Portfolio">
+    <title>Ansh Thapa | CS with AI Portfolio</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+
+    <!-- Custom Cursor -->
+    <div class="cursor-dot" id="cursorDot"></div>
+    <div class="cursor-outline" id="cursorOutline"></div>
+
+    <!-- Particle Canvas Background -->
+    <canvas id="particleCanvas"></canvas>
+
+    <!-- ===== NAVIGATION ===== -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <a href="#hero" class="nav-logo">
+                <span class="logo-bracket">&lt;</span>AT<span class="logo-bracket">/&gt;</span>
+            </a>
+            <div class="nav-links" id="navLinks">
+                <a href="#about" class="nav-link">About</a>
+                <a href="#education" class="nav-link">Education</a>
+                <a href="#skills" class="nav-link">Skills</a>
+                <a href="#projects" class="nav-link">Projects</a>
+                <a href="#experience" class="nav-link">Experience</a>
+                <a href="#contact" class="nav-link">Contact</a>
+            </div>
+            <div class="nav-actions">
+                <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+                    <i class="fa-solid fa-sun" id="themeIconSun"></i>
+                    <i class="fa-solid fa-moon" id="themeIconMoon"></i>
+                </button>
+                <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- ===== HERO SECTION ===== -->
+    <section class="hero" id="hero">
+        <div class="hero-container">
+            <div class="hero-content">
+                <div class="hero-badge">
+                    <span class="badge-dot"></span> CS with AI Student
+                </div>
+                <h1 class="hero-title">
+                    Hi, I'm <span class="gradient-text">Ansh Thapa</span>
+                </h1>
+                <div class="hero-typing">
+                    <span id="typingText"></span><span class="typing-cursor">|</span>
+                </div>
+                <p class="hero-subtitle">
+                    Computer Science with AI student at Softwarica College, passionate about full-stack development,
+                    artificial intelligence, and creating software that solves real-world problems.
+                </p>
+                <div class="hero-buttons">
+                    <a href="#projects" class="btn btn-primary">
+                        <i class="fa-solid fa-code"></i> View Projects
+                    </a>
+                    <a href="#contact" class="btn btn-outline">
+                        <i class="fa-solid fa-paper-plane"></i> Contact Me
+                    </a>
+                    <a href="#" class="btn btn-ghost cv-btn">
+                        <i class="fa-solid fa-download"></i> Download CV
+                    </a>
+                </div>
+            </div>
+            <div class="hero-visual">
+                <div class="hero-avatar-placeholder">
+                    <div class="avatar-circle">
+                        <span>AT</span>
+                    </div>
+                    <div class="floating-shape shape-1"></div>
+                    <div class="floating-shape shape-2"></div>
+                    <div class="floating-shape shape-3"></div>
+                </div>
+            </div>
+        </div>
+        <div class="scroll-indicator">
+            <span>Scroll</span>
+            <div class="scroll-mouse">
+                <div class="scroll-dot"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== ABOUT SECTION ===== -->
+    <section class="about section" id="about">
+        <div class="section-container">
+            <h2 class="section-title">
+                <span class="section-number">01.</span> About Me
+            </h2>
+            <div class="about-grid">
+                <div class="about-text">
+                    <p>
+                        I'm <strong>Ansh Thapa</strong>, a Computer Science with AI student at
+                        <span class="highlight">Softwarica College of IT and E-Commerce</span>, affiliated with
+                        Coventry University. I'm passionate about full-stack development, artificial intelligence,
+                        and creating software that solves real-world problems.
+                    </p>
+                    <p>
+                        I enjoy building impactful projects, exploring emerging technologies, and continuously
+                        improving my skills as a developer. Whether it's crafting clean front-end interfaces
+                        or designing robust backend systems, I love the entire process of bringing ideas to life.
+                    </p>
+                    <p>
+                        Currently, I'm diving deep into AI/ML technologies while strengthening my full-stack
+                        development expertise.
+                    </p>
+                    <div class="about-stats">
+                        <div class="about-stat">
+                            <span class="stat-num">3+</span>
+                            <span class="stat-lbl">Years of Learning</span>
+                        </div>
+                        <div class="about-stat">
+                            <span class="stat-num">5+</span>
+                            <span class="stat-lbl">Projects Built</span>
+                        </div>
+                        <div class="about-stat">
+                            <span class="stat-num">15+</span>
+                            <span class="stat-lbl">Technologies</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="about-visual">
+                    <div class="about-card glass-card">
+                        <div class="about-card-icon">
+                            <i class="fa-solid fa-location-dot"></i>
+                        </div>
+                        <h4>Location</h4>
+                        <p>Budhanilkantha, Kathmandu, Nepal</p>
+                    </div>
+                    <div class="about-card glass-card">
+                        <div class="about-card-icon">
+                            <i class="fa-solid fa-graduation-cap"></i>
+                        </div>
+                        <h4>Degree</h4>
+                        <p>BSc (Hons) Computer Science with AI</p>
+                    </div>
+                    <div class="about-card glass-card">
+                        <div class="about-card-icon">
+                            <i class="fa-solid fa-briefcase"></i>
+                        </div>
+                        <h4>Currently</h4>
+                        <p>Intern @ Camden Tools (UK)</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== EDUCATION SECTION ===== -->
+    <section class="education section" id="education">
+        <div class="section-container">
+            <h2 class="section-title">
+                <span class="section-number">02.</span> Education
+            </h2>
+            <div class="education-card glass-card">
+                <div class="education-header">
+                    <div class="edu-icon">
+                        <i class="fa-solid fa-building-columns"></i>
+                    </div>
+                    <div class="edu-main">
+                        <h3>Softwarica College of IT and E-Commerce</h3>
+                        <p class="edu-affiliation">Affiliated with Coventry University, UK</p>
+                        <p class="edu-degree">BSc (Hons) Computer Science with AI</p>
+                    </div>
+                    <div class="edu-period">
+                        <span>2024 — 2027</span>
+                    </div>
+                </div>
+                <div class="education-details">
+                    <div class="edu-modules">
+                        <h4><i class="fa-solid fa-book-open"></i> Key Areas of Study</h4>
+                        <div class="module-tags">
+                            <span class="module-tag">Programming Fundamentals</span>
+                            <span class="module-tag">Data Structures & Algorithms</span>
+                            <span class="module-tag">Artificial Intelligence</span>
+                            <span class="module-tag">Machine Learning</span>
+                            <span class="module-tag">Web Development</span>
+                            <span class="module-tag">Database Systems</span>
+                            <span class="module-tag">Software Engineering</span>
+                            <span class="module-tag">Computer Networks</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== SKILLS SECTION ===== -->
+    <section class="skills section" id="skills">
+        <div class="section-container">
+            <h2 class="section-title">
+                <span class="section-number">03.</span> Skills &amp; Technologies
+            </h2>
+            <div class="skills-grid">
+                <!-- Programming -->
+                <div class="skill-category glass-card">
+                    <div class="skill-cat-header">
+                        <i class="fa-solid fa-code"></i>
+                        <h3>Programming</h3>
+                    </div>
+                    <div class="skill-tags">
+                        <span class="skill-tag">Python</span>
+                        <span class="skill-tag">Java</span>
+                        <span class="skill-tag">Kotlin</span>
+                        <span class="skill-tag">JavaScript</span>
+                        <span class="skill-tag">C++</span>
+                    </div>
+                </div>
+                <!-- Web -->
+                <div class="skill-category glass-card">
+                    <div class="skill-cat-header">
+                        <i class="fa-solid fa-globe"></i>
+                        <h3>Web</h3>
+                    </div>
+                    <div class="skill-tags">
+                        <span class="skill-tag">HTML</span>
+                        <span class="skill-tag">CSS</span>
+                        <span class="skill-tag">React</span>
+                        <span class="skill-tag">Next.js</span>
+                        <span class="skill-tag">Tailwind CSS</span>
+                    </div>
+                </div>
+                <!-- Backend -->
+                <div class="skill-category glass-card">
+                    <div class="skill-cat-header">
+                        <i class="fa-solid fa-server"></i>
+                        <h3>Backend</h3>
+                    </div>
+                    <div class="skill-tags">
+                        <span class="skill-tag">Node.js</span>
+                        <span class="skill-tag">Express</span>
+                        <span class="skill-tag">Django</span>
+                        <span class="skill-tag">Firebase</span>
+                    </div>
+                </div>
+                <!-- Database -->
+                <div class="skill-category glass-card">
+                    <div class="skill-cat-header">
+                        <i class="fa-solid fa-database"></i>
+                        <h3>Database</h3>
+                    </div>
+                    <div class="skill-tags">
+                        <span class="skill-tag">MySQL</span>
+                        <span class="skill-tag">PostgreSQL</span>
+                        <span class="skill-tag">MongoDB</span>
+                        <span class="skill-tag">Firebase DB</span>
+                    </div>
+                </div>
+                <!-- AI/ML -->
+                <div class="skill-category glass-card">
+                    <div class="skill-cat-header">
+                        <i class="fa-solid fa-brain"></i>
+                        <h3>AI &amp; Machine Learning</h3>
+                    </div>
+                    <div class="skill-tags">
+                        <span class="skill-tag">Machine Learning</span>
+                        <span class="skill-tag">TensorFlow</span>
+                        <span class="skill-tag">Scikit-learn</span>
+                        <span class="skill-tag">OpenCV</span>
+                    </div>
+                </div>
+                <!-- Tools -->
+                <div class="skill-category glass-card">
+                    <div class="skill-cat-header">
+                        <i class="fa-solid fa-toolbox"></i>
+                        <h3>Tools &amp; Platforms</h3>
+                    </div>
+                    <div class="skill-tags">
+                        <span class="skill-tag">Git</span>
+                        <span class="skill-tag">GitHub</span>
+                        <span class="skill-tag">Docker</span>
+                        <span class="skill-tag">VS Code</span>
+                        <span class="skill-tag">Linux</span>
+                        <span class="skill-tag">Cloudflare</span>
+                        <span class="skill-tag">Vercel</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== PROJECTS SECTION ===== -->
+    <section class="projects section" id="projects">
+        <div class="section-container">
+            <h2 class="section-title">
+                <span class="section-number">04.</span> Featured Projects
+            </h2>
+            <p class="section-subtitle">Some things I've built recently</p>
+            <div class="projects-grid" id="projectsGrid">
+                <!-- Project 1 - Placeholder -->
+                <div class="project-card glass-card">
+                    <div class="project-image">
+                        <div class="project-img-placeholder">
+                            <i class="fa-solid fa-folder-open"></i>
+                            <span>Project Screenshot</span>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">Project Name</h3>
+                        <p class="project-desc">
+                            Project description will go here. Describe what the project does,
+                            the problem it solves, and its key features.
+                        </p>
+                        <div class="project-tech">
+                            <span class="tech-tag">Tech 1</span>
+                            <span class="tech-tag">Tech 2</span>
+                            <span class="tech-tag">Tech 3</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="#" class="project-link" title="GitHub">
+                                <i class="fa-brands fa-github"></i> Code
+                            </a>
+                            <a href="#" class="project-link live" title="Live Demo">
+                                <i class="fa-solid fa-arrow-up-right-from-square"></i> Live Demo
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 2 - Placeholder -->
+                <div class="project-card glass-card">
+                    <div class="project-image">
+                        <div class="project-img-placeholder">
+                            <i class="fa-solid fa-folder-open"></i>
+                            <span>Project Screenshot</span>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">Project Name</h3>
+                        <p class="project-desc">
+                            Project description will go here. Describe what the project does,
+                            the problem it solves, and its key features.
+                        </p>
+                        <div class="project-tech">
+                            <span class="tech-tag">Tech 1</span>
+                            <span class="tech-tag">Tech 2</span>
+                            <span class="tech-tag">Tech 3</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="#" class="project-link" title="GitHub">
+                                <i class="fa-brands fa-github"></i> Code
+                            </a>
+                            <a href="#" class="project-link live" title="Live Demo">
+                                <i class="fa-solid fa-arrow-up-right-from-square"></i> Live Demo
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 3 - Placeholder -->
+                <div class="project-card glass-card">
+                    <div class="project-image">
+                        <div class="project-img-placeholder">
+                            <i class="fa-solid fa-folder-open"></i>
+                            <span>Project Screenshot</span>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">Project Name</h3>
+                        <p class="project-desc">
+                            Project description will go here. Describe what the project does,
+                            the problem it solves, and its key features.
+                        </p>
+                        <div class="project-tech">
+                            <span class="tech-tag">Tech 1</span>
+                            <span class="tech-tag">Tech 2</span>
+                            <span class="tech-tag">Tech 3</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="#" class="project-link" title="GitHub">
+                                <i class="fa-brands fa-github"></i> Code
+                            </a>
+                            <a href="#" class="project-link live" title="Live Demo">
+                                <i class="fa-solid fa-arrow-up-right-from-square"></i> Live Demo
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="projects-cta">
+                <a href="https://github.com/Ansh-Thapa" target="_blank" class="btn btn-outline">
+                    <i class="fa-brands fa-github"></i> View More on GitHub
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== EXPERIENCE SECTION ===== -->
+    <section class="experience section" id="experience">
+        <div class="section-container">
+            <h2 class="section-title">
+                <span class="section-number">05.</span> Experience
+            </h2>
+            <div class="timeline">
+                <!-- Experience 1 -->
+                <div class="timeline-item">
+                    <div class="timeline-marker">
+                        <i class="fa-solid fa-briefcase"></i>
+                    </div>
+                    <div class="timeline-content glass-card">
+                        <div class="timeline-header">
+                            <div>
+                                <h3>Software Development Intern</h3>
+                                <p class="timeline-company">Camden Tools, UK</p>
+                            </div>
+                            <span class="timeline-date">Present</span>
+                        </div>
+                        <p class="timeline-desc">
+                            Working remotely from Nepal as a software development intern, contributing to
+                            real-world projects and gaining industry experience in a professional environment.
+                        </p>
+                        <div class="timeline-tags">
+                            <span class="tech-tag">Remote</span>
+                            <span class="tech-tag">Teamwork</span>
+                            <span class="tech-tag">Professional Dev</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Experience 2 - University Projects -->
+                <div class="timeline-item">
+                    <div class="timeline-marker">
+                        <i class="fa-solid fa-graduation-cap"></i>
+                    </div>
+                    <div class="timeline-content glass-card">
+                        <div class="timeline-header">
+                            <div>
+                                <h3>University Projects &amp; Coursework</h3>
+                                <p class="timeline-company">Softwarica College / Coventry University</p>
+                            </div>
+                            <span class="timeline-date">2024 — Present</span>
+                        </div>
+                        <p class="timeline-desc">
+                            Built multiple projects as part of academic coursework, applying theoretical
+                            knowledge to practical applications in software development, AI, and database systems.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Experience 3 - Placeholder for more -->
+                <div class="timeline-item timeline-placeholder">
+                    <div class="timeline-marker muted">
+                        <i class="fa-solid fa-ellipsis"></i>
+                    </div>
+                    <div class="timeline-content glass-card muted-card">
+                        <p><em>More experiences to be added — freelance, hackathons, open-source...</em></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== CERTIFICATES SECTION ===== -->
+    <section class="certificates section" id="certificates">
+        <div class="section-container">
+            <h2 class="section-title">
+                <span class="section-number">06.</span> Certifications
+            </h2>
+            <p class="section-subtitle">Professional certifications and achievements</p>
+            <div class="certs-placeholder glass-card">
+                <i class="fa-solid fa-certificate"></i>
+                <p>Certifications will be added here soon.</p>
+                <span class="certs-note">Currently pursuing certifications in AI/ML, Cloud, and Web Development.</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== GITHUB SECTION ===== -->
+    <section class="github section" id="github">
+        <div class="section-container">
+            <h2 class="section-title">
+                <span class="section-number">07.</span> GitHub Activity
+            </h2>
+            <div class="github-card glass-card">
+                <div class="github-profile">
+                    <div class="github-avatar">
+                        <i class="fa-brands fa-github"></i>
+                    </div>
+                    <div class="github-info">
+                        <h3>Ansh-Thapa</h3>
+                        <a href="https://github.com/Ansh-Thapa" target="_blank" class="github-link">
+                            <i class="fa-solid fa-arrow-up-right-from-square"></i> github.com/Ansh-Thapa
+                        </a>
+                    </div>
+                </div>
+                <div class="github-stats" id="githubStats">
+                    <div class="github-stat">
+                        <span class="gh-stat-num" id="ghRepos">—</span>
+                        <span class="gh-stat-lbl">Repositories</span>
+                    </div>
+                    <div class="github-stat">
+                        <span class="gh-stat-num" id="ghStars">—</span>
+                        <span class="gh-stat-lbl">Stars</span>
+                    </div>
+                    <div class="github-stat">
+                        <span class="gh-stat-num" id="ghLang">—</span>
+                        <span class="gh-stat-lbl">Languages</span>
+                    </div>
+                </div>
+                <div class="github-contributions">
+                    <img
+                        src="https://ghchart.rshah.org/6c5ce7/Ansh-Thapa"
+                        alt="GitHub Contribution Graph"
+                        class="github-chart"
+                        id="githubChart"
+                    >
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== CURRENTLY LEARNING ===== -->
+    <section class="currently-learning section" id="learning">
+        <div class="section-container">
+            <h2 class="section-title">
+                <span class="section-number">08.</span> Currently Learning
+            </h2>
+            <div class="learning-grid">
+                <div class="learning-card glass-card">
+                    <i class="fa-solid fa-robot"></i>
+                    <h3>AI &amp; Machine Learning</h3>
+                    <p>Deep diving into TensorFlow, neural networks, and real-world ML applications.</p>
+                </div>
+                <div class="learning-card glass-card">
+                    <i class="fa-solid fa-cloud"></i>
+                    <h3>Cloud &amp; DevOps</h3>
+                    <p>Exploring Docker, deployment pipelines, and cloud infrastructure.</p>
+                </div>
+                <div class="learning-card glass-card">
+                    <i class="fa-solid fa-mobile-screen"></i>
+                    <h3>Mobile Development</h3>
+                    <p>Learning Kotlin and Android app development for building mobile solutions.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== CONTACT SECTION ===== -->
+    <section class="contact section" id="contact">
+        <div class="section-container">
+            <h2 class="section-title">
+                <span class="section-number">09.</span> Get In Touch
+            </h2>
+            <p class="section-subtitle">
+                I'm currently looking for opportunities — feel free to reach out!
+            </p>
+            <div class="contact-grid">
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fa-solid fa-envelope"></i>
+                        </div>
+                        <div>
+                            <h4>Email</h4>
+                            <a href="mailto:anshthapa97@gmail.com">anshthapa97@gmail.com</a>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fa-brands fa-github"></i>
+                        </div>
+                        <div>
+                            <h4>GitHub</h4>
+                            <a href="https://github.com/Ansh-Thapa" target="_blank">github.com/Ansh-Thapa</a>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fa-brands fa-linkedin"></i>
+                        </div>
+                        <div>
+                            <h4>LinkedIn</h4>
+                            <a href="https://www.linkedin.com/in/ansh-thapa-774686347/" target="_blank">linkedin.com/in/ansh-thapa</a>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fa-solid fa-location-dot"></i>
+                        </div>
+                        <div>
+                            <h4>Location</h4>
+                            <span>Budhanilkantha, Kathmandu, Nepal</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="contact-form glass-card">
+                    <h3>Send Me a Message</h3>
+                    <form id="contactForm">
+                        <div class="form-group">
+                            <label for="name">Name</label>
+                            <input type="text" id="name" placeholder="Your name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" placeholder="Your email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Message</label>
+                            <textarea id="message" rows="4" placeholder="Your message..." required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary">
+                            <i class="fa-solid fa-paper-plane"></i> Send Message
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== FOOTER ===== -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-logo">
+                <span class="logo-bracket">&lt;</span>AT<span class="logo-bracket">/&gt;</span>
+            </div>
+            <p class="footer-text">
+                Designed &amp; Built by Ansh Thapa &copy; <span id="currentYear"></span>
+            </p>
+            <div class="footer-socials">
+                <a href="https://github.com/Ansh-Thapa" target="_blank" class="social-link" aria-label="GitHub">
+                    <i class="fa-brands fa-github"></i>
+                </a>
+                <a href="https://www.linkedin.com/in/ansh-thapa-774686347/" target="_blank" class="social-link" aria-label="LinkedIn">
+                    <i class="fa-brands fa-linkedin"></i>
+                </a>
+                <a href="mailto:anshthapa97@gmail.com" class="social-link" aria-label="Email">
+                    <i class="fa-solid fa-envelope"></i>
+                </a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
